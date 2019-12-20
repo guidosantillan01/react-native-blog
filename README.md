@@ -23,3 +23,15 @@ var sharedBlacklist = [
   /.*\/__tests__\/.*/
 ];
 ```
+
+Add Context
+
+```js
+import React, { useContext } from 'react';
+```
+
+```js
+const IndexScreen = () => {
+  const context = useContext(BlogContext)
+  ...
+```
