@@ -9,8 +9,10 @@ const blogReducer = (state, action) => {
   }
 };
 
-const addBlogPost = () => {
-  dispatch({ type: 'ADD_BLOGPOST' });
+const addBlogPost = dispatch => {
+  return () => {
+    dispatch({ type: 'ADD_BLOGPOST' });
+  };
 };
 
 const actions = {
