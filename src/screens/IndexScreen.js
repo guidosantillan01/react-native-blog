@@ -4,7 +4,6 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  Button,
   TouchableOpacity
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
@@ -14,11 +13,11 @@ import { Context } from '../context/BlogContext';
 // { Context as BlogContext }
 
 const IndexScreen = ({ navigation }) => {
-  const { state, addBlogPost, deleteBlogPost } = useContext(Context);
+  const { state, deleteBlogPost } = useContext(Context);
 
   return (
     <View>
-      <Button title="Add Post" onPress={addBlogPost} />
+      {state.length === 0 && <Text>Add some blog posts :)</Text>}
       <FlatList
         data={state}
         keyExtractor={blogPost => blogPost.title}
