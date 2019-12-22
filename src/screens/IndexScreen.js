@@ -18,6 +18,16 @@ const IndexScreen = ({ navigation }) => {
   // Runs just one time
   useEffect(() => {
     getBlogPosts();
+
+    // To re-fetch our list
+    const listener = navigation.addListener('didFocus', () => {
+      getBlogPosts();
+    });
+
+    // Clean up listeners
+    return () => {
+      listener.remove();
+    };
   }, []);
 
   return (
