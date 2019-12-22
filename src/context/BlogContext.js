@@ -25,7 +25,7 @@ const blogReducer = (state, action) => {
 const addBlogPost = dispatch => {
   return (title, content, callback) => {
     dispatch({ type: 'ADD_BLOGPOST', payload: { title, content } });
-    callback();
+    if (callback) callback();
   };
 };
 
@@ -36,8 +36,9 @@ const deleteBlogPost = dispatch => {
 };
 
 const editBlogPost = dispatch => {
-  return (id, title, content) => {
+  return (id, title, content, callback) => {
     dispatch({ type: 'EDIT_BLOGPOST', payload: { id, title, content } });
+    if (callback) callback();
   };
 };
 
