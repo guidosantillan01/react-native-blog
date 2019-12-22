@@ -35,3 +35,14 @@ const IndexScreen = () => {
   const context = useContext(BlogContext)
   ...
 ```
+
+## Setup JSON Server
+
+https://github.com/typicode/json-server
+
+1. Install `JSON Server` and `ngrok` server.
+   `npm install json-server ngrok`
+
+## Install axios
+
+`npm install axios`
