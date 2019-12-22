@@ -36,7 +36,9 @@ const actions = {
   deleteBlogPost
 };
 
-const initialState = [];
+const initialState = [
+  { id: 'Q1W2E3', title: 'TEST POST', content: 'TEST CONTENT' }
+];
 
 export const { Context, Provider } = createDataContext(
   blogReducer,
