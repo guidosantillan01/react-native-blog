@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,12 @@ import { Context } from '../context/BlogContext';
 // { Context as BlogContext }
 
 const IndexScreen = ({ navigation }) => {
-  const { state, deleteBlogPost } = useContext(Context);
+  const { state, deleteBlogPost, getBlogPosts } = useContext(Context);
+
+  // Runs just one time
+  useEffect(() => {
+    getBlogPosts();
+  }, []);
 
   return (
     <View>
